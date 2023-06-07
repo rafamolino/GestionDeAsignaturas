@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PrincipalController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="173.0" layoutY="90.0" prefHeight="687.0" prefWidth="918.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="95.0" prefWidth="918.0" BorderPane.alignment="CENTER" />
+               </top>
+               <left>
+                  <AnchorPane prefHeight="619.0" prefWidth="200.0" styleClass="nav-form" stylesheets="@estiloPrincipal.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="-95.0" prefHeight="687.0" prefWidth="201.0" styleClass="nav-form" stylesheets="@estiloPrincipal.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-95.0">
+                           <children>
+                              <Button fx:id="btnCargarDatos" layoutX="8.0" layoutY="186.0" mnemonicParsing="false" onAction="#cambiarVentana" prefWidth="180.0" styleClass="nav-btn" stylesheets="@estiloPrincipal.css" text="Cargar datos">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnAsignaciones" layoutX="8.0" layoutY="289.0" mnemonicParsing="false" onAction="#cambiarVentana" prefWidth="180.0" styleClass="nav-btn" stylesheets="@estiloPrincipal.css" text="Asignaciones">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnModificarDatos" layoutX="8.0" layoutY="390.0" mnemonicParsing="false" onAction="#cambiarVentana" prefWidth="180.0" styleClass="nav-btn" stylesheets="@estiloPrincipal.css" text="Modificar datos">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="ventanaAsignaciones" layoutX="231.0" layoutY="-21.0" prefHeight="613.0" prefWidth="718.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-21.0">
+                           <children>
+                              <AnchorPane layoutX="11.0" layoutY="-58.0" prefHeight="660.0" prefWidth="985.0" stylesheets="@estiloPrincipal.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="tablaVista" layoutX="16.0" layoutY="65.0" prefHeight="576.0" prefWidth="956.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_profesor" prefWidth="68.0" text="Profesor" />
+                                        <TableColumn fx:id="col_asignatura" prefWidth="254.0" text="Asignatura" />
+                                          <TableColumn fx:id="col_titulacion" prefWidth="276.0" text="Titulación" />
+                                          <TableColumn fx:id="col_cuatrimestre" prefWidth="105.0" text="Cuatrimestre" />
+                                          <TableColumn fx:id="col_grupo" prefWidth="76.0" text="Grupo" />
+                                          <TableColumn fx:id="col_horario" prefWidth="102.0" text="Horario" />
+                                          <TableColumn fx:id="col_creditos" prefWidth="74.0" text="Créditos" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="buscarAsignacion" layoutX="16.0" layoutY="22.0" onKeyTyped="#filtroBusquedaAsignacion" prefHeight="25.0" prefWidth="217.0" promptText="Buscar" styleClass="search" stylesheets="@estiloPrincipal.css">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="btnDescargarPDF" layoutX="826.0" layoutY="22.0" mnemonicParsing="false" onAction="#descargarPDF" prefHeight="26.0" prefWidth="145.0" styleClass="btn-pdf" stylesheets="@estiloPrincipal.css" text="Descargar PDF">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="ventanaCarga" layoutX="259.0" layoutY="137.0" prefHeight="592.0" prefWidth="718.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="12.0" layoutY="-82.0" prefHeight="660.0" prefWidth="985.0" stylesheets="@estiloPrincipal.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="125.0" layoutY="175.0" text="Selecciona un fichero Excel para la carga correcta de los datos">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnSeleccionarFichero" layoutX="43.0" layoutY="252.0" mnemonicParsing="false" onAction="#seleccionarFichero" text="Fichero">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Label fx:id="labFichero" layoutX="148.0" layoutY="257.0" prefHeight="27.0" prefWidth="609.0">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnEjecutar" layoutX="192.0" layoutY="357.0" mnemonicParsing="false" onAction="#ejecutarCargaDatos" prefHeight="44.0" prefWidth="311.0" text="Ejecutar">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="ventanaModificaciones" layoutY="-29.0" prefHeight="613.0" prefWidth="718.0" visible="false">
+                           <children>
+                              <AnchorPane layoutX="11.0" layoutY="-58.0" prefHeight="671.0" prefWidth="985.0" stylesheets="@estiloPrincipal.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="93.0" prefWidth="962.0">
+                                       <children>
+                                          <Button fx:id="btnProfesores" layoutX="172.0" layoutY="25.0" mnemonicParsing="false" onAction="#cambiarLista" stylesheets="@estiloPrincipal.css" text="Profesores" textFill="WHITE">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="nav-form" />
+                                                <String fx:value="btn-modificar" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="btnAsignaturas" layoutX="398.0" layoutY="25.0" mnemonicParsing="false" onAction="#cambiarLista" stylesheets="@estiloPrincipal.css" text="Asignaturas" textFill="WHITE">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="nav-form" />
+                                                <String fx:value="btn-modificar" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="btnPeticiones" layoutX="656.0" layoutY="25.0" mnemonicParsing="false" onAction="#cambiarLista" stylesheets="@estiloPrincipal.css" text="Peticiones" textFill="WHITE">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="nav-form" />
+                                                <String fx:value="btn-modificar" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="14.0" layoutY="107.0" prefHeight="557.0" prefWidth="962.0">
+                                       <children>
+                                          <AnchorPane fx:id="ventanaProfesores" layoutY="94.0" prefHeight="545.0" prefWidth="961.0" stylesheets="@estiloPrincipal.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <TextField fx:id="labBuscarProfesor" layoutX="24.0" layoutY="23.0" onKeyTyped="#filtroBusquedaProfesor" prefHeight="25.0" prefWidth="218.0" promptText="Buscar" />
+                                                <TableView fx:id="tablaProfesores" layoutX="24.0" layoutY="73.0" onMouseClicked="#profesorSeleccionado" prefHeight="439.0" prefWidth="427.0">
+                                                  <columns>                                                    <TableColumn fx:id="colP_profesor" prefWidth="178.0" text="Profesor" />
+                                                    <TableColumn fx:id="colP_capacidad" prefWidth="143.0" text="Capacidad efectiva" />
+                                                      <TableColumn fx:id="colP_excedente" prefWidth="105.0" text="Excedente" />
+                                                  </columns>
+                                                </TableView>
+                                                <Label layoutX="546.0" layoutY="176.0" prefHeight="21.0" prefWidth="69.0" text="Profesor">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtProfesor" layoutX="615.0" layoutY="174.0" />
+                                                <Label layoutX="484.0" layoutY="254.0" prefHeight="21.0" prefWidth="137.0" text="Capacidad efectiva">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtCapacidad" layoutX="615.0" layoutY="252.0" />
+                                                <TextField fx:id="txtExcedente" editable="false" layoutX="615.0" layoutY="318.0" promptText="0.0" />
+                                                <Label layoutX="535.0" layoutY="320.0" prefHeight="21.0" prefWidth="80.0" text="Excedente">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnActualizarProfesor" layoutX="494.0" layoutY="384.0" mnemonicParsing="false" onAction="#actualizarProfesor" styleClass="btn-green" stylesheets="@estiloPrincipal.css" text="Actualizar">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="btnEliminarProfesor" layoutX="615.0" layoutY="384.0" mnemonicParsing="false" onAction="#eliminarProfesor" styleClass="btn-red" stylesheets="@estiloPrincipal.css" text="Eliminar">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label alignment="TOP_RIGHT" layoutX="534.0" layoutY="120.0" prefHeight="21.0" prefWidth="69.0" text="ID">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtProfesorID" layoutX="615.0" layoutY="118.0" />
+                                                <Button fx:id="btnLimpiarProfesor" layoutX="730.0" layoutY="384.0" mnemonicParsing="false" onAction="#limpiarProfesor" styleClass="btn-gray" stylesheets="@estiloPrincipal.css" text="Limpiar">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="btnAñadirProfesor" layoutX="844.0" layoutY="384.0" mnemonicParsing="false" onAction="#añadirProfesor" styleClass="btn-blue" stylesheets="@estiloPrincipal.css" text="Añadir">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="ventanaAsignaturas" layoutX="-1.0" layoutY="8.0" prefHeight="545.0" prefWidth="961.0" stylesheets="@estiloPrincipal.css" visible="false">
+                                             <children>
+                                                <TextField fx:id="labBuscarAsignatura" layoutX="24.0" layoutY="23.0" onKeyTyped="#filtroBusquedaAsignatura" prefHeight="25.0" prefWidth="218.0" promptText="Buscar" />
+                                                <TableView fx:id="tablaAsignaturas" layoutX="24.0" layoutY="73.0" onMouseClicked="#asignaturaSeleccionado" prefHeight="229.0" prefWidth="916.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="colA_asignatura" prefWidth="178.0" text="Asignatura" />
+                                                      <TableColumn fx:id="colA_titulacion" prefWidth="301.0" text="Titulacion" />
+                                                      <TableColumn fx:id="colA_act" prefWidth="62.0" text="Act." />
+                                                      <TableColumn fx:id="colA_grupo" prefWidth="72.0" text="Grupo" />
+                                                      <TableColumn fx:id="colA_cuatrimestre" prefWidth="114.0" text="Cuatrimestre" />
+                                                      <TableColumn fx:id="colA_creditos" prefWidth="73.0" text="Créditos" />
+                                                      <TableColumn fx:id="colA_horario" prefWidth="115.0" text="Horario" />
+                                                   </columns>
+                                                </TableView>
+                                                <Label layoutX="91.0" layoutY="377.0" prefHeight="21.0" prefWidth="77.0" text="Asignatura">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtAsignatura" layoutX="168.0" layoutY="375.0" />
+                                                <Label layoutX="96.0" layoutY="426.0" prefHeight="21.0" prefWidth="78.0" text="Titulación">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtTitulacion" layoutX="167.0" layoutY="424.0" />
+                                                <TextField fx:id="txtAct" layoutX="174.0" layoutY="464.0" />
+                                                <Label layoutX="134.0" layoutY="476.0" prefHeight="21.0" prefWidth="34.0" text="Act.">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button layoutX="699.0" layoutY="342.0" mnemonicParsing="false" onAction="#actualizarAsignatura" styleClass="btn-green" stylesheets="@estiloPrincipal.css" text="Actualizar">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button layoutX="699.0" layoutY="421.0" mnemonicParsing="false" onAction="#eliminarAsignatura" styleClass="btn-red" stylesheets="@estiloPrincipal.css" text="Eliminar">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label alignment="TOP_RIGHT" layoutX="87.0" layoutY="321.0" prefHeight="21.0" prefWidth="69.0" text="ID">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtAsignaturaID" layoutX="168.0" layoutY="319.0" />
+                                                <Button layoutX="827.0" layoutY="342.0" mnemonicParsing="false" onAction="#limpiarAsignatura" styleClass="btn-gray" stylesheets="@estiloPrincipal.css" text="Limpiar">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button layoutX="830.0" layoutY="421.0" mnemonicParsing="false" onAction="#añadirAsignaturas" styleClass="btn-blue" stylesheets="@estiloPrincipal.css" text="Añadir">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <TextField fx:id="txtGrupo" layoutX="449.0" layoutY="319.0" />
+                                                <Label layoutX="402.0" layoutY="321.0" prefHeight="21.0" prefWidth="47.0" text="Grupo">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtCuatrimestre" layoutX="449.0" layoutY="375.0" />
+                                                <Label layoutX="359.0" layoutY="377.0" prefHeight="21.0" prefWidth="90.0" text="Cuatrimestre">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtCreditos" layoutX="449.0" layoutY="424.0" />
+                                                <Label layoutX="390.0" layoutY="426.0" prefHeight="21.0" prefWidth="60.0" text="Créditos">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtHorario" layoutX="455.0" layoutY="464.0" />
+                                                <Label layoutX="389.0" layoutY="476.0" prefHeight="21.0" prefWidth="60.0" text="Horario">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="ventanaPeticiones" layoutX="10.0" layoutY="10.0" prefHeight="545.0" prefWidth="961.0" stylesheets="@estiloPrincipal.css" visible="false" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="11.0">
+                                             <children>
+                                                <TableView fx:id="tablaPeticiones" layoutX="24.0" layoutY="15.0" onMouseClicked="#profesorSeleccionado" prefHeight="497.0" prefWidth="637.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="colPe_profesor" prefWidth="118.0" text="ID_Profesor" />
+                                                      <TableColumn fx:id="colPe_preferencia" prefWidth="131.0" text="Preferencia" />
+                                                      <TableColumn fx:id="colPe_id_asignatura" prefWidth="92.0" text="ID_Asignatura" />
+                                                      <TableColumn fx:id="colPe_asignatura" prefWidth="295.0" text="Asignatura" />
+                                                   </columns>
+                                                </TableView>
+                                                <Label layoutX="710.0" layoutY="172.0" prefHeight="21.0" prefWidth="80.0" text="Preferencia">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnEjecutarAsignacion" layoutX="726.0" layoutY="372.0" mnemonicParsing="false" onAction="#ejecutarAlgoritmoAsignacion" prefHeight="31.0" prefWidth="173.0" styleClass="btn-green" stylesheets="@estiloPrincipal.css" text="Ejecutar Asignación">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="btnEliminarPeticion" layoutX="828.0" layoutY="318.0" mnemonicParsing="false" onAction="#eliminarPeticion" styleClass="btn-red" stylesheets="@estiloPrincipal.css" text="Eliminar">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label alignment="TOP_RIGHT" layoutX="695.0" layoutY="116.0" prefHeight="21.0" prefWidth="83.0" text="ID_Profesor">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAñadirPeticion" layoutX="726.0" layoutY="318.0" mnemonicParsing="false" onAction="#añadirPeticion" styleClass="btn-blue" stylesheets="@estiloPrincipal.css" text="Añadir">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <ComboBox fx:id="comboIdProfesor" layoutX="790.0" layoutY="114.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="comboIdAsignaturas" layoutX="790.0" layoutY="238.0" prefWidth="150.0" />
+                                                <Label layoutX="687.0" layoutY="240.0" prefHeight="21.0" prefWidth="94.0" text="ID_Asignatura">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Text layoutX="687.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Para eliminar una petición, seleccione los ID de profesor y asignatura" wrappingWidth="267.13671875">
+                                                   <font>
+                                                      <Font name="System Italic" size="11.0" />
+                                                   </font>
+                                                </Text>
+                                                <Spinner fx:id="spinnerPreferencia" layoutX="790.0" layoutY="170.0" />
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                       </children></AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
