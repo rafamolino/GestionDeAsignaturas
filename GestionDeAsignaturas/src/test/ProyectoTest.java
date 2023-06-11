@@ -18,56 +18,50 @@ public class ProyectoTest {
 	@Test
 	public void testCompatibilidadHoraria1() {
 		AsignacionAsignaturas asignacionAsignaturas = new AsignacionAsignaturas();
-		Asignatura asignatura1 = new Asignatura(1, "Ingeniería del Software", "Fundamentos de programación", "A", 1, 1, 3.6, "L. - 10:40");
-		Asignatura asignatura2 = new Asignatura(2, "Ingeniería del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L. - 10:40");
+		Asignatura asignatura1 = new Asignatura(1, "Ingenieria del Software", "Fundamentos de programacion", "A", 1, 1, 3.6, "L. - 10:40");
+		Asignatura asignatura2 = new Asignatura(2, "Ingenieria del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L. - 10:40");
 		Boolean resultado = asignacionAsignaturas.esCompatibleHorario(asignatura1, asignatura2);
-		Assertions.assertFalse(resultado);
-		
+		Assertions.assertFalse(resultado);		
 	}
 	@Test
 	public void testCompatibilidadHoraria2() {
 		AsignacionAsignaturas asignacionAsignaturas = new AsignacionAsignaturas();
-		Asignatura asignatura1 = new Asignatura(1, "Ingeniería del Software", "Fundamentos de programación", "A", 1, 1, 3.6, "L. - 10:40");
-		Asignatura asignatura2 = new Asignatura(2, "Ingeniería del Software", "Sistemas Operativos", "A", 1, 2, 3.6, "L. - 10:40");
+		Asignatura asignatura1 = new Asignatura(1, "Ingenieria del Software", "Fundamentos de programacion", "A", 1, 1, 3.6, "L. - 10:40");
+		Asignatura asignatura2 = new Asignatura(2, "Ingenieria del Software", "Sistemas Operativos", "A", 1, 2, 3.6, "L. - 10:40");
 		Boolean resultado = asignacionAsignaturas.esCompatibleHorario(asignatura1, asignatura2);
-		Assertions.assertTrue(resultado);
-		
+		Assertions.assertTrue(resultado);		
 	}
 	@Test
 	public void testCompatibilidadHoraria3() {
 		AsignacionAsignaturas asignacionAsignaturas = new AsignacionAsignaturas();
-		Asignatura asignatura1 = new Asignatura(1, "Ingeniería del Software", "Fundamentos de programación", "A", 1, 1, 3.6, "L. - 17:40");
-		Asignatura asignatura2 = new Asignatura(2, "Ingeniería del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L,M,X,J");
+		Asignatura asignatura1 = new Asignatura(1, "Ingenieria del Software", "Fundamentos de programacion", "A", 1, 1, 3.6, "L. - 17:40");
+		Asignatura asignatura2 = new Asignatura(2, "Ingenieria del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L,M,X,J");
 		Boolean resultado = asignacionAsignaturas.esCompatibleHorario(asignatura1, asignatura2);
-		Assertions.assertFalse(resultado);
-		
+		Assertions.assertFalse(resultado);		
 	}
 	@Test
 	public void testCompatibilidadHoraria4() {
 		AsignacionAsignaturas asignacionAsignaturas = new AsignacionAsignaturas();
-		Asignatura asignatura1 = new Asignatura(1, "Ingeniería del Software", "Fundamentos de programación", "A", 1, 1, 3.6, "L. - 10:40");
-		Asignatura asignatura2 = new Asignatura(2, "Ingeniería del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L,M,X,J");
+		Asignatura asignatura1 = new Asignatura(1, "Ingenieria del Software", "Fundamentos de programacion", "A", 1, 1, 3.6, "L. - 10:40");
+		Asignatura asignatura2 = new Asignatura(2, "Ingenieria del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L,M,X,J");
 		Boolean resultado = asignacionAsignaturas.esCompatibleHorario(asignatura1, asignatura2);
-		Assertions.assertTrue(resultado);
-		
+		Assertions.assertTrue(resultado);		
 	}
 	@Test
 	public void testCompatibilidadHoraria5() {
 		AsignacionAsignaturas asignacionAsignaturas = new AsignacionAsignaturas();
-		Asignatura asignatura1 = new Asignatura(1, "Ingeniería del Software", "Fundamentos de programación", "A", 1, 1, 3.6, "X,J");
-		Asignatura asignatura2 = new Asignatura(2, "Ingeniería del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L,M,X,J");
+		Asignatura asignatura1 = new Asignatura(1, "Ingenieria del Software", "Fundamentos de programacion", "A", 1, 1, 3.6, "X,J");
+		Asignatura asignatura2 = new Asignatura(2, "Ingenieria del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L,M,X,J");
 		Boolean resultado = asignacionAsignaturas.esCompatibleHorario(asignatura1, asignatura2);
-		Assertions.assertFalse(resultado);
-		
+		Assertions.assertFalse(resultado);		
 	}
 	@Test
 	public void testCompatibilidadHoraria6() {
 		AsignacionAsignaturas asignacionAsignaturas = new AsignacionAsignaturas();
-		Asignatura asignatura1 = new Asignatura(1, "Ingeniería del Software", "Fundamentos de programación", "A", 1, 1, 3.6, "X,J");
-		Asignatura asignatura2 = new Asignatura(2, "Ingeniería del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L,M");
+		Asignatura asignatura1 = new Asignatura(1, "Ingenieria del Software", "Fundamentos de programacion", "A", 1, 1, 3.6, "X,J");
+		Asignatura asignatura2 = new Asignatura(2, "Ingenieria del Software", "Sistemas Operativos", "A", 1, 1, 3.6, "L,M");
 		Boolean resultado = asignacionAsignaturas.esCompatibleHorario(asignatura1, asignatura2);
-		Assertions.assertTrue(resultado);
-		
+		Assertions.assertTrue(resultado);		
 	}
 	//Comprobación de no asignación de asignatura por estar asignada a otro profesor
 	@Test
@@ -75,9 +69,9 @@ public class ProyectoTest {
 		AsignacionAsignaturas asignacionAsignaturas = new AsignacionAsignaturas();
 		Profesor profesor1 = new Profesor("Rafael Molino Alvarez", 8.00, 8.00);
 		Profesor profesor2 = new Profesor("Javier Molino Alvarez", 1.00, 1.00); 
-		Asignatura asignatura1 = new Asignatura(1, "Ingeniería del Software", "Fundamentos de programación", "A", 1, 1, 3.6, "L. - 10:40");
-		Asignatura asignatura2 = new Asignatura(2, "Ingeniería del Software", "Sistemas Operativos", "A", 1, 2, 3.6, "J. - 17:40");
-		Asignatura asignatura3 = new Asignatura(3, "Ingeniería del Software", "Analisis de Datos y Algoritmos", "A", 1, 2, 3.6, "M. - 17:40");
+		Asignatura asignatura1 = new Asignatura(1, "Ingenieria del Software", "Fundamentos de programacion", "A", 1, 1, 3.6, "L. - 10:40");
+		Asignatura asignatura2 = new Asignatura(2, "Ingenieria del Software", "Sistemas Operativos", "A", 1, 2, 3.6, "J. - 17:40");
+		Asignatura asignatura3 = new Asignatura(3, "Ingenieria del Software", "Analisis de Datos y Algoritmos", "A", 1, 2, 3.6, "M. - 17:40");
 		List<Profesor> profesores = new ArrayList<>();
 		profesores.add(profesor1);
 		profesores.add(profesor2);
@@ -97,15 +91,14 @@ public class ProyectoTest {
 		System.out.println(datos.get(1));
 		Boolean resultado = datos.get(2).containsValue(asignatura1) && datos.get(2).containsValue(asignatura2);
 		Assertions.assertFalse(resultado);
-
 	}
 	//Comprobación de no asignación de asignatura por falta de créditos
 	@Test
 	public void testCreditosDisponibles() {
 		AsignacionAsignaturas asignacionAsignaturas = new AsignacionAsignaturas();
 		Profesor profesor1 = new Profesor("Rafael Molino Alvarez", 4.00, 4.00);
-		Asignatura asignatura1 = new Asignatura(1, "Ingeniería del Software", "Fundamentos de programación", "A", 1, 1, 3.6, "L. - 10:40");
-		Asignatura asignatura2 = new Asignatura(2, "Ingeniería del Software", "Sistemas Operativos", "A", 1, 2, 3.6, "J. - 17:40");
+		Asignatura asignatura1 = new Asignatura(1, "Ingenieria del Software", "Fundamentos de programacion", "A", 1, 1, 3.6, "L. - 10:40");
+		Asignatura asignatura2 = new Asignatura(2, "Ingenieria del Software", "Sistemas Operativos", "A", 1, 2, 3.6, "J. - 17:40");
 		List<Profesor> profesores = new ArrayList<>();
 		profesores.add(profesor1);
 		Map<Integer, Map<Integer, Asignatura>> preferenciasProfesores = new HashMap<>();
@@ -118,8 +111,9 @@ public class ProyectoTest {
 		System.out.println(datos.get(1));
 		Boolean resultado = datos.get(1).containsValue(asignatura2);
 		Assertions.assertFalse(resultado);
-
 	}
+	
+	
 
 
 }

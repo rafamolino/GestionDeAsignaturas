@@ -109,7 +109,4 @@ public class Asignatura {
 	public void setId_asignatura(Integer id_asignatura) {
 		this.id_asignatura = id_asignatura;
 	}
-
-	// Getter y Setter para los atributos
-
 }

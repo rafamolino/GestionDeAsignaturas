@@ -9,7 +9,7 @@ public class DataBase {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://localhost/gestion_asignaturas","root","root");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://localhost/gestion_asignaturas","root","");
 			return connect;
 		
 		} catch (Exception e) {

@@ -1,28 +1,21 @@
 package application;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Observable;
-import java.util.function.Predicate;
-
 import database.AsignacionDB;
 import database.AsignaturaDB;
 import database.DataBase;
@@ -33,12 +26,8 @@ import datos.ExtraerDatos;
 import datos.GenerarPDF;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
@@ -51,7 +40,6 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import objetos.Asignatura;
 import objetos.Profesor;
 import javafx.stage.Stage;
-import javafx.util.converter.PercentageStringConverter;
 
 public class PrincipalController {
 
@@ -484,10 +472,7 @@ public class PrincipalController {
 						/ 100.0;
 				double capacidadEfctiva = Math.round(profesores.get(i).getCapacidadEfectiva() * 100.0) / 100.0;
 
-				// Double excedente =( Math.round(((profesores.get(i).getCapacidadEfectiva() -
-				// excedentes.get(i))*100.0)/100.0 );
-				// Double capacidadEfctiva =(double)
-				// Math.round((profesores.get(i).getCapacidadEfectiva()*100.0)/100.0 ) ;
+
 
 				prepare.setInt(1, i + 1);
 				prepare.setString(2, profesores.get(i).getNombreProfesor());
@@ -911,6 +896,7 @@ public class PrincipalController {
 		txtCapacidad.setText("");
 		txtExcedente.setText("");
 		txtProfesorID.setEditable(true);
+		txtProfesor.setEditable(true);
 	}
 
 	public void añadirProfesor() {

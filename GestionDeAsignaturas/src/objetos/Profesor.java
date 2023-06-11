@@ -31,8 +31,6 @@ public class Profesor {
 		this.capacidadEfectiva = capacidadEfectiva;
 	}
 
-	
-
 	@Override
 	public String toString() {
 		return "Profesor [nombreProfesor=" + nombreProfesor + ", capacidadEfectiva=" + capacidadEfectiva + ", exceso="
@@ -54,7 +52,4 @@ public class Profesor {
 	public void setExceso(Double exceso) {
 		this.exceso = exceso;
 	}
-	
-	
-
 }
